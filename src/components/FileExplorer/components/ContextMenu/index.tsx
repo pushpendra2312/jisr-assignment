@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useRef } from "react";
 import {
   CONTEXT_MENU_OPTIONS,
   ACTION_TYPE_CUT,
@@ -15,6 +16,8 @@ interface ContextMenuProps {
 
 const ContextMenu = ({ contextMenu, closeContextMenu }: ContextMenuProps) => {
   const { selectedFileName } = contextMenu;
+
+  const contextContainRef = useRef<HTMLUListElement>(null);
 
   const handleContextMenuOptionClick = (
     e: React.MouseEvent<HTMLUListElement>
@@ -39,8 +42,28 @@ const ContextMenu = ({ contextMenu, closeContextMenu }: ContextMenuProps) => {
     closeContextMenu();
   };
 
+  const handleClickOutside = useCallback(
+    (e: MouseEvent) => {
+      if (
+        contextContainRef.current &&
+        !contextContainRef.current.contains(e.target as Node)
+      ) {
+        closeContextMenu();
+      }
+    },
+    [closeContextMenu]
+  );
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [handleClickOutside]);
+
   return (
     <ul
+      ref={contextContainRef}
       className="contextMenu"
       style={{
         left: contextMenu?.contextMenuLeft,
