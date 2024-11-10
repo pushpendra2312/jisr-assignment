@@ -1,7 +1,20 @@
+import FileExplorer from "../..";
+import { Folder, File } from "../../../../types/types";
+
 import "./Folder.css";
 
-const Folder = () => {
-  return <div>Folder</div>;
+interface FolderProps {
+  name: string;
+  itemList: (File | Folder)[];
+}
+
+const FolderComp = ({ name, itemList }: FolderProps) => {
+  return (
+    <>
+      <div>{name}</div>
+      {!!itemList.length && <FileExplorer itemList={itemList} />}
+    </>
+  );
 };
 
-export default Folder;
+export default FolderComp;

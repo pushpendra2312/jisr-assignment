@@ -1,4 +1,6 @@
-import type { File, Folder } from "../../types/types";
+import { ItemType, type File, type Folder } from "../../types/types";
+import FolderComp from "./components/Folder";
+import FileComp from "./components/File";
 
 import "./FileExplorer.css";
 
@@ -10,9 +12,12 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ itemList }) => {
   return (
     <>
       {itemList.map((item) => {
-        const { name } = item;
-
-        return <div key={name}>{name}</div>;
+        const { name, type } = item;
+        const list = type === ItemType.Folder ? (item as Folder).data : [];
+        if (type === ItemType.Folder) {
+          return <FolderComp key={name} name={name} itemList={list} />;
+        }
+        return <FileComp key={name} name={name} />;
       })}
     </>
   );
