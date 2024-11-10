@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import fileIcon from "../../../../assets/file.svg";
 import FileExplorerContext from "../../../../context/fileExplorer";
 import { FileProps } from "../../../../interfaces/interfaces";
+import { getFileIcon } from "./utils";
 
 import "./File.css";
 
-const File: React.FC<FileProps> = ({ name }) => {
+const File: React.FC<FileProps> = ({ name, type }) => {
   const fileExplorerContext = useContext(FileExplorerContext);
 
   const { highlightItem, highlightItemHandler } = fileExplorerContext;
@@ -21,7 +21,7 @@ const File: React.FC<FileProps> = ({ name }) => {
       } fileContainer`}
       onClick={handleFileClick}
     >
-      <img className="fileIcon" src={fileIcon} />
+      <img className="fileIcon" src={getFileIcon(type)} />
       {name}
     </div>
   );

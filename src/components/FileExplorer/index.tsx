@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Folder, ItemType } from "../../types/types";
+import { Folder, ItemType, File as FileType } from "../../types/types";
 import {
   ContextMenuState,
   FileExplorerProps,
@@ -61,6 +61,7 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ itemList }) => {
         {itemList.map((item) => {
           const { name, type } = item;
           const list = type === ItemType.Folder ? (item as Folder).data : [];
+          const meta = type === ItemType.File ? (item as FileType).meta : "";
 
           return (
             <div
@@ -70,7 +71,7 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ itemList }) => {
               {type === ItemType.Folder ? (
                 <FolderComp key={name} name={name} itemList={list} />
               ) : (
-                <FileComp key={name} name={name} />
+                <FileComp key={name} name={name} type={meta} />
               )}
             </div>
           );

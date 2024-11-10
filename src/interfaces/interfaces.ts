@@ -23,6 +23,7 @@ export interface FileExplorerProps {
 
 export interface FileProps {
   name: string;
+  type: string;
 }
 
 export interface FolderProps {
