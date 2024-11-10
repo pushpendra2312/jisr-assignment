@@ -12,13 +12,16 @@ import { FolderProps } from "../../../../interfaces/interfaces";
 const FolderComp = ({ name, itemList }: FolderProps) => {
   const fileExplorerContext = useContext(FileExplorerContext);
 
-  const { highlightItem, highlightItemHandler } = fileExplorerContext;
+  const highlightItem = fileExplorerContext?.highlightItem;
+  const highlightItemHandler = fileExplorerContext?.highlightItemHandler;
 
   const [isExpanded, setIsExpanded] = useState(false);
 
   const openFolder = () => {
     setIsExpanded((prev) => !prev);
-    highlightItemHandler(name);
+    if (highlightItemHandler) {
+      highlightItemHandler(name);
+    }
   };
 
   return (

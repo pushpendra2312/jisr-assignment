@@ -8,10 +8,11 @@ import "./File.css";
 const File: React.FC<FileProps> = ({ name, type }) => {
   const fileExplorerContext = useContext(FileExplorerContext);
 
-  const { highlightItem, highlightItemHandler } = fileExplorerContext;
+  const highlightItem = fileExplorerContext?.highlightItem;
+  const highlightItemHandler = fileExplorerContext?.highlightItemHandler;
 
   const handleFileClick = () => {
-    highlightItemHandler(name);
+    highlightItemHandler?.(name);
   };
 
   return (
