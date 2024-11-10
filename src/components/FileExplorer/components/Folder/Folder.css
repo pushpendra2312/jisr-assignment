@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.folderContainer--highlighted {
+  border: 1px solid green;
+}
+
 .folderIcon {
   width: 20px;
   height: 20px;

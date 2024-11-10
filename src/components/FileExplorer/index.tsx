@@ -1,17 +1,16 @@
 import { useState } from "react";
 
-import { ItemType, type File, type Folder } from "../../types/types";
-import { ContextMenuState } from "../../interfaces/interfaces";
+import { Folder, ItemType } from "../../types/types";
+import {
+  ContextMenuState,
+  FileExplorerProps,
+} from "../../interfaces/interfaces";
 
 import FolderComp from "./components/Folder";
 import FileComp from "./components/File";
 import ContextMenu from "./components/ContextMenu";
 
 import "./FileExplorer.css";
-
-interface FileExplorerProps {
-  itemList: (File | Folder)[];
-}
 
 const initialContextMenuState: ContextMenuState = {
   contextMenuLeft: 0,

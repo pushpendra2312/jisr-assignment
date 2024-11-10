@@ -12,6 +12,10 @@
   cursor: default;
 }
 
+.fileContainer--highlighted {
+  border: 1px solid green;
+}
+
 .fileIcon {
   width: 20px;
   height: 20px;
