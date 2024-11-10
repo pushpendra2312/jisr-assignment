@@ -10,16 +10,17 @@ interface FileExplorerProps {
 
 const FileExplorer: React.FC<FileExplorerProps> = ({ itemList }) => {
   return (
-    <>
+    <div className="fileExplorerContainer">
       {itemList.map((item) => {
         const { name, type } = item;
         const list = type === ItemType.Folder ? (item as Folder).data : [];
-        if (type === ItemType.Folder) {
-          return <FolderComp key={name} name={name} itemList={list} />;
-        }
-        return <FileComp key={name} name={name} />;
+        return type === ItemType.Folder ? (
+          <FolderComp key={name} name={name} itemList={list} />
+        ) : (
+          <FileComp key={name} name={name} />
+        );
       })}
-    </>
+    </div>
   );
 };
 
