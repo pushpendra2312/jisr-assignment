@@ -14,3 +14,5 @@ export type Folder = {
   name: string;
   data: Array<File | Folder>;
 };
+
+export type ActionType = "CUT" | "RENAME" | "DELETE";

@@ -1,0 +1,23 @@
+.contextMenu {
+  position: absolute;
+  background-color: rgb(81, 81, 81);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px var(--hover-background-secondary);
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease-in;
+}
+
+li {
+  padding: 4px 12px;
+}
+
+li:hover {
+  background-color: var(--hover-background-secondary);
+}

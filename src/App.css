@@ -2,6 +2,7 @@
   max-width: 1280px;
   padding: 2rem;
   --hover-background-primary: rgba(72, 72, 72, 0.542);
+  --hover-background-secondary: rgba(22, 22, 22, 0.542);
 }
 
 .logo {
