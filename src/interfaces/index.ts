@@ -1,4 +1,4 @@
-import { ActionType, File, Folder } from "../types/types";
+import { ActionType, File, Folder } from "../types";
 
 export interface ContextMenuOption {
   action: ActionType;

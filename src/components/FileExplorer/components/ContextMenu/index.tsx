@@ -5,7 +5,7 @@ import {
   ACTION_TYPE_DELETE,
   ACTION_TYPE_RENAME,
 } from "../../../../constants/contextMenu";
-import { ContextMenuState } from "../../../../interfaces/interfaces";
+import { ContextMenuState } from "../../../../interfaces";
 
 import "./ContextMenu.css";
 

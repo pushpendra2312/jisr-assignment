@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { FileExplorerContextType } from "../interfaces/interfaces";
+import { FileExplorerContextType } from "../interfaces";
 
 const FileExplorerContext = createContext<FileExplorerContextType | null>(null);
 

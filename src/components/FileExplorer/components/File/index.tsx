@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import FileExplorerContext from "../../../../context/fileExplorer";
-import { FileProps } from "../../../../interfaces/interfaces";
+import { FileProps } from "../../../../interfaces";
 import { getFileIcon } from "./utils";
 
 import "./File.css";

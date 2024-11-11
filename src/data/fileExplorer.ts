@@ -1,4 +1,4 @@
-import { ItemType, Folder } from "../types/types";
+import { ItemType, Folder } from "../types";
 
 export const FILES_DATA: Folder = {
   type: ItemType.Folder,

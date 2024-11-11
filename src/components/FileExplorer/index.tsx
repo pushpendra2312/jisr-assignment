@@ -1,10 +1,7 @@
 import { useState } from "react";
 
-import { Folder, ItemType, File as FileType } from "../../types/types";
-import {
-  ContextMenuState,
-  FileExplorerProps,
-} from "../../interfaces/interfaces";
+import { Folder, ItemType, File as FileType } from "../../types";
+import { ContextMenuState, FileExplorerProps } from "../../interfaces";
 
 import FolderComp from "./components/Folder";
 import FileComp from "./components/File";

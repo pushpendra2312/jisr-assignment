@@ -1,5 +1,5 @@
-import { ContextMenuOption } from "../interfaces/interfaces";
-import { ActionType } from "../types/types";
+import { ContextMenuOption } from "../interfaces";
+import { ActionType } from "../types";
 
 export const ACTION_TYPE_CUT: ActionType = "CUT";
 export const ACTION_TYPE_RENAME: ActionType = "RENAME";

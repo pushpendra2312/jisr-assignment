@@ -7,7 +7,7 @@ import folderClosed from "../../../../assets/folderClosed.svg";
 import folderOpen from "../../../../assets/folderOpen.svg";
 
 import "./Folder.css";
-import { FolderProps } from "../../../../interfaces/interfaces";
+import { FolderProps } from "../../../../interfaces";
 
 const FolderComp = ({ name, itemList }: FolderProps) => {
   const fileExplorerContext = useContext(FileExplorerContext);
